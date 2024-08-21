@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <header class="navbar flex-md-nowrap  shadow-sm">
+
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="logo-header">
+                        <span class="d-none d-sm-block fw-light h4 mb-0 px-3">
+                            <img src="logo.png" width="24px" align="left" class="me-2">
+                            <b>Electro</b>template
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center w-100 px-4">
+                    <div class="flex-fill text-start">
+                        <span class="d-block d-sm-none">
+
+                            <button class="nav-link" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <i class="fa-solid fa-bars"></i>
+                            </button>
+                        </span>
+
+                        <span class="d-none d-sm-block">
+
+
+                            <button class="btn btn-sm btn-lighter" id="toggleTheme">
+                                <i class="fa-solid fa-moon"></i>
+                            </button>
+
+                            <span class="dropdown  dropend">
+                                <button class="btn btn-sm btn-lighter position-relative " type="button"
+                                    id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-regular fa-bell"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill border-lighter bg-primary-subtle text-primary-emphasis">
+                                        99+
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                            <i class="fa-solid fa-user  me-2 mt-2"></i>
+                                            <div>
+                                                <div class="fw-bold">New User Registered</div>
+                                                <div class="text-muted">A new user has registered on your site.</div>
+                                                <small class="text-muted">2 minutes ago</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                            <i class="fa-solid fa-message me-2 mt-2"></i>
+                                            <div>
+                                                <div class="fw-bold">New Message</div>
+                                                <div class="text-muted">You have received a new message from John.</div>
+                                                <small class="text-muted">15 minutes ago</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-start" href="#">
+                                            <i class="fa-solid fa-cart-shopping me-2 mt-2"></i>
+                                            <div>
+                                                <div class="fw-bold">Order Placed</div>
+                                                <div class="text-muted">A new order has been placed on your store.</div>
+                                                <small class="text-muted">30 minutes ago</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- Add more notifications as needed -->
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item text-center" href="#">See all notifications</a></li>
+                                </ul>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="flex-fill text-center">
+                        <span class="d-none d-sm-block">
+                            <div class="input-group">
+                                <input type="text" class="form-control serach-control fw-light"
+                                    placeholder="Recipient's username" aria-label="Recipient's username"
+                                    aria-describedby="button-addon2">
+                                <button class="btn serach-control" type="button" id="button-addon2"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </span>
+
+
+
+                    </div>
+                    <div class="flex-fill text-end">
+                        <div>
+                            <span class="dropdown  me-2">
+                                <a href="#" class="text-decoration-none" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <span
+                                        class="badge border-0 align-items-center fw-light p-1 text-secondary-emphasis bg-secondary-subtle border-secondary-subtle rounded-pill">
+                                        <span class="px-2">English</span>
+                                        <img class="rounded-circle" width="24" height="24"
+                                            src="https://cdn-icons-png.flaticon.com/128/197/197374.png" alt="">
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow" style="min-width: 250px;">
+
+                                    <li><a class="dropdown-item" href="#">Polish</a></li>
+
+
+                                </ul>
+                            </span>
+
+                            <span class="dropdown dropstart">
+                                <a href="#" class="" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span
+                                        class="badge border-0 align-items-center fw-light p-1 text-secondary-emphasis bg-secondary-subtle border-secondary-subtle rounded-pill">
+                                        <span class="px-2">Paweł Kuszka</span>
+                                        <img class="rounded-circle" width="24" height="24"
+                                            src="https://github.com/mdo.png" alt="">
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow" style="min-width: 250px;">
+                                    <li class="text-center mt-3 mb-3">
+                                        <img class="rounded-circle shadow-sm mb-2" width="80" height="80"
+                                            src="https://github.com/mdo.png" alt="">
+                                        <h6 class="mb-0">Paweł Kuszka</h6>
+                                        <small class="text-muted">Administrator</small>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                </ul>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="sidebar shadow-sm " style="width: 280px;">
+                <!-- -->
+                <div class="offcanvas-lg offcanvas-start " tabindex="9999" id="sidebarMenu"
+                    aria-labelledby="sidebarMenuLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="sidebarMenuLabel">Eskimed</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            data-bs-target="#sidebarMenu" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body flex-column overflow-y-auto   ">
+                        <span
+                            class="sidebar-heading d-flex justify-content-between align-items-center mt-4 mb-3 text-body-secondary text-uppercase">
+                            <span>notifications</span>
+                        </span>
+                        <ul class="nav flex-column">
+
+                            <li class="nav-item">
+                                <a href="/" class="nav-link ">
+                                    <div
+                                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+                                        <span>
+                                            <i class="fa-solid fa-envelope"></i> Messages
+                                        </span>
+                                        <button class="btn btn-sm btn-lighter text-muted" id="toggleTheme">
+                                            10
+                                        </button>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <span
+                            class="sidebar-heading d-flex justify-content-between align-items-center my-3 text-body-secondary text-uppercase">
+                            <span>Saved reports</span>
+                        </span>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link active">
+                                    <i class="fa-solid fa-house"></i> Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" data-bs-toggle="collapse" href="#tablesCollapse"
+                                    role="button" aria-expanded="false" aria-controls="tablesCollapse">
+                                    <div
+                                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+                                        <span>
+                                            <i class="fa-solid fa-layer-group"></i> Components
+                                        </span>
+                                        <i class="fa-solid fa-plus ms-2"></i>
+                                    </div>
+                                </a>
+                                <div class="collapse" id="tablesCollapse" data-bs-parent=".offcanvas-body">
+                                    <ul class="nav flex-column ms-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="buttons.html">Buttons</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="cards.html">Cards</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="forms.html">Forms</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="tables.html">Tables</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" data-bs-toggle="collapse" href="#tablesCollapse2"
+                                    role="button" aria-expanded="false" aria-controls="tablesCollapse">
+                                    <div
+                                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+                                        <span>
+                                            <i class="fa-solid fa-file"></i> Pages
+                                        </span>
+                                        <i class="fa-solid fa-plus ms-2"></i>
+                                    </div>
+                                </a>
+                                <div class="collapse" id="tablesCollapse2" data-bs-parent=".offcanvas-body">
+                                    <ul class="nav flex-column ms-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register.html">Register</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="404.html">404 page</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="settings.html">Settings</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="profile.html">Profile</a>
+                                        </li>
+                                        <!-- Dodaj więcej tabel tutaj -->
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <main class="ms-sm-auto col-lg main-content p-0">
+                <div class="p-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                                aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"> <i class="fa-solid fa-house"></i> </li>
+                                    <li class="breadcrumb-item"> Home </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-12">
+                            <div
+                                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3">
+                                <h1 class="h3  ">Strona Główna</h1>
+                                <div class="btn-toolbar ">
+                                    <div class="btn-group me-2">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                                    </div>
+                                    <button type="button"
+                                        class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">
+
+                                        This week
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="col-12 mb-4">
+
+
+                            <div class="row g-3">
+                                <!-- Box 1 -->
+                                <div class="col-md-3">
+                                    <div class="card shadow-sm">
+                                        <div class="card-body">
+                                            <span class="badge  bg-primary-subtle text-primary-emphasis mb-2 p-3">
+
+                                                <i class="fa-solid fa-users fa-2x"></i>
+                                            </span>
+                                            <div class="h2 mb-2">15,133</div>
+                                            <div>Visitors</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Box 2 -->
+                                <div class="col-md-3">
+                                    <div class="card shadow-sm">
+                                        <div class="card-body">
+                                            <span class="badge bg-info-subtle text-info-emphasis mb-2 p-3">
+                                                <i class="fa-solid fa-truck-fast fa-2x"></i>
+                                            </span>
+                                            <div class="h2 mb-2">86</div>
+                                            <div>Orders</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Box 3 -->
+                                <div class="col-md-3">
+                                    <div class="card shadow-sm">
+                                        <div class="card-body">
+                                            <span class="badge  bg-success-subtle text-success-emphasis mb-2 p-3">
+                                                <i class="fa-solid fa-user fa-2x"></i>
+                                            </span>
+                                            <div class="h2 mb-2">97</div>
+                                            <div>New users</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Box 4 -->
+                                <div class="col-md-3">
+                                    <div class="card shadow-sm">
+                                        <div class="card-body">
+                                            <span class="badge  bg-danger-subtle text-danger-emphasis mb-2 p-3">
+                                                <i class="fa-solid fa-truck-fast fa-2x"></i>
+                                            </span>
+                                            <div class="h2 mb-2">3,200 $</div>
+                                            <div>Income</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Chart 2 -->
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    Chart 2
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="chart2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    Chart 1
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="chart1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 mt-4">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    ss
+                                </div>
+                                <div class="table-responsive ">
+                                    <table class="table table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Header</th>
+                                                <th scope="col">Header</th>
+                                                <th scope="col">Header</th>
+                                                <th scope="col">Header</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                    </div>
+
+                                                </td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                                <td><img class="rounded-circle" width="24" height="24"
+                                                        src="https://github.com/mdo.png" alt=""> Pawel Kuszka</td>
+                                                <td>
+                                                    <span
+                                                        class="badge rounded-pill  bg-primary-subtle text-primary-emphasis"><i
+                                                            class="fa-regular fa-clock"></i> In progress</span>
+                                                </td>
+
+                                                <td>text</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                    </div>
+
+                                                </td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                                <td><img class="rounded-circle" width="24" height="24"
+                                                        src="https://github.com/mdo.png" alt=""> Pawel Kuszka</td>
+                                                <td>
+                                                    <span
+                                                        class="badge rounded-pill  bg-success-subtle text-success-emphasis"><i
+                                                            class="fa-regular fa-circle-check"></i> Done</span>
+                                                </td>
+
+                                                <td>text</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                    </div>
+
+                                                </td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                                <td><img class="rounded-circle" width="24" height="24"
+                                                        src="https://github.com/mdo.png" alt=""> Pawel Kuszka</td>
+                                                <td>
+                                                    <span
+                                                        class="badge rounded-pill  bg-warning-subtle text-warning-emphasis"><i
+                                                            class="fa-regular fa-circle-check"></i> Done</span>
+                                                </td>
+
+                                                <td>text</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                    </div>
+
+                                                </td>
+                                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                                <td><img class="rounded-circle" width="24" height="24"
+                                                        src="https://github.com/mdo.png" alt=""> Pawel Kuszka</td>
+                                                <td>
+                                                    <span
+                                                        class="badge rounded-pill  bg-danger-subtle text-danger-emphasis"><i
+                                                            class="fa-regular fa-circle-check"></i> Done</span>
+                                                </td>
+
+                                                <td>text</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+
+
+        // Chart.js scripts
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart 1
+            const ctx1 = document.getElementById('chart1').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        backgroundColor: 'rgba(0, 0, 0, 1)',
+                        borderColor: 'rgba(0, 0, 0, 1)',
+                        borderWidth: 1,
+                        borderRadius: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false  // Ukryj legendę
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Chart 2
+            const ctx2 = document.getElementById('chart2').getContext('2d');
+            new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [20, 35, 50, 40, 60, 70, 90],
+                        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                        borderColor: 'rgba(0, 0, 0, 1)',
+                        borderWidth: 2,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false  // Ukryj legendę
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+
+
+        document.getElementById('toggleTheme').addEventListener('click', function () {
+            const htmlElement = document.documentElement;
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme); // Save theme choice in local storage
+        });
+
+        // Load the saved theme on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        });
+    </script>
+    
+</body>
+</html>
